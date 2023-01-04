@@ -86,10 +86,11 @@ public class GameManager : MonoBehaviour
 
         if (currentNode == endNode)
         {
+            arrBlock[currentNode.pos.x, currentNode.pos.y].SetState(Node.State.Result);
             while (currentNode != startNode || currentNode == null)
             {
-                arrBlock[currentNode.pos.x, currentNode.pos.y].SetState(Node.State.Result);
                 currentNode = currentNode.prev;
+                arrBlock[currentNode.pos.x, currentNode.pos.y].SetState(Node.State.Result);
             }
         }
 
